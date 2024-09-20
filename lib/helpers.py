@@ -6,6 +6,7 @@ def exit_program():
     print("Goodbye!")
     exit()
 
+
 # We'll implement the department functions in this lesson
 
 
@@ -18,8 +19,7 @@ def list_departments():
 def find_department_by_name():
     name = input("Enter the department's name: ")
     department = Department.find_by_name(name)
-    print(department) if department else print(
-        f'Department {name} not found')
+    print(department) if department else print(f'Department {name} not found')
 
 
 def find_department_by_id():
@@ -67,8 +67,11 @@ def delete_department():
 
 # You'll implement the employee functions in the lab
 
+
 def list_employees():
-    pass
+    employees = Employee.get_all()
+    for employee in employees:
+        print(employee)
 
 
 def find_employee_by_name():
