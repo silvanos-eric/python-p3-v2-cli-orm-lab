@@ -81,7 +81,9 @@ def find_employee_by_name():
 
 
 def find_employee_by_id():
-    pass
+    id_ = input("Enter employee id: ")
+    employee = Employee.find_by_id(id_)
+    print(employee) if employee else print(f"Employee with id {id_} not found")
 
 
 def create_employee():
