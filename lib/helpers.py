@@ -99,7 +99,22 @@ def create_employee():
 
 
 def update_employee():
-    pass
+    id_ = input("Enter employee's id: ")
+    if employee := Employee.find_by_id(id_):
+        try:
+            name = input("Enter the employee's new name: ")
+            employee.name = name
+            job_title = input("Enter the employee's new job title: ")
+            employee.job_title = job_title
+            department_id = int(input("Enter employee's new department id: "))
+            employee.department_id = department_id
+
+            employee.update()
+            print(f"Success: {employee}")
+        except Exception as exc:
+            print("Error updating employee: ", exc)
+    else:
+        print(f"Employee {id_} not found")
 
 
 def delete_employee():
